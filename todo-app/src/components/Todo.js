@@ -4,16 +4,15 @@ import TodoList from './TodoList'
 
 
 export const Todo = ({todo, dispatch}) => {
-    const completedTodo =e=>{
+    const completedTodo =todo=>{
         dispatch({
             type:'COMPLETED',
             payload:todo.id
         })
+
     }
     return(
-        <div onClick={completedTodo}>
-            <p>{todo.item}</p>
-        </div>
+        <p onClick={()=>{completedTodo(todo)}}>{todo.item}</p>
     )
 }
  

@@ -10,7 +10,7 @@ export const reducer = (state, action) =>{
          }        
         return([...state,  toDo]);
         case 'DELETE':
-            return state.filter(item=>item.completed)
+            return state.filter(item=>!item.completed)
         case 'COMPLETED':
             const currentId = action.payload;
             return state.map(item=>{
