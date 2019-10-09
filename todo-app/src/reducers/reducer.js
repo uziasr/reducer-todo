@@ -12,12 +12,17 @@ export const reducer = (state, action) =>{
         case 'DELETE':
             return state.filter(item=>!item.completed)
         case 'COMPLETED':
-            const currentId = action.payload;
-            return state.map(item=>{
-                if(item.id===currentId){
-                    item.completed = !item.completed
+            return (state.map(item => {
+                if (item.id === action.payload) {
+                    return {
+                        ...item,
+                        completed: !item.completed
+                    };
+                } else {
+                    return item;
                 }
-            })
+                }));
+                    
             // return state.filter(item=>item.completed)
 
         default:

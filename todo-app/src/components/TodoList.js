@@ -11,10 +11,10 @@ export function TodoList(){
     return(
 
         <div>
+            <TodoForm state={state} dispatch={dispatch}></TodoForm>
             {state.map(todo=>{
               return <Todo todo={todo} dispatch={dispatch}/>
             })}
-            <TodoForm state={state} dispatch={dispatch}></TodoForm>
         </div>
     )
 }

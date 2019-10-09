@@ -9,6 +9,7 @@ export const Todo = ({todo, dispatch}) => {
             type:'COMPLETED',
             payload:todo.id
         })
+        // console.log(todo.id)
 
     }
     return(
